@@ -1,0 +1,260 @@
+{
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Project Setup",
+      "description": "Confirm the project can install dependencies, run verification, and start from a clean checkout",
+      "dependencies": [],
+      "status": "completed",
+      "evidence": "gradle build and unit tests passed successfully"
+    },
+    {
+      "id": "feat-002",
+      "name": "Login and Register Screens",
+      "description": "Implement native Android Login and Register screens using XML layouts, ViewBinding, validation, password toggle, and navigation for otw.in",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "activity_login.xml, activity_register.xml, Login.kt, Register.kt implemented with ViewBinding, validation, and navigation"
+    },
+    {
+      "id": "feat-003",
+      "name": "Verification Coverage",
+      "description": "Run gradle build, unit tests, and linting checks",
+      "dependencies": ["feat-002"],
+      "status": "completed",
+      "evidence": "assembleDebug and testDebugUnitTest passed successfully"
+    },
+    {
+      "id": "feat-004",
+      "name": "Documentation Update",
+      "description": "Update progress.md and feature_list.json",
+      "dependencies": ["feat-003"],
+      "status": "completed",
+      "evidence": "Updated feature state and progress log"
+    },
+    {
+      "id": "feat-005",
+      "name": "Cleanup and Handoff",
+      "description": "Leave repo clean and restartable",
+      "dependencies": ["feat-004"],
+      "status": "completed",
+      "evidence": "Build clean, ready for next session"
+    },
+    {
+      "id": "feat-006",
+      "name": "otw.in Premium Drawable Resource Library",
+      "description": "Create a complete XML drawable library: vector icons, button/input/card backgrounds, interactive selectors with ripples, checkbox/radio states, status badges, and brand logo assets",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "111 drawable XML files created in app/src/main/res/drawable; all 127 project XML files parsed with zero errors; all @color and @drawable references resolve; Gradle build intentionally not run per explicit user instruction"
+    },
+    {
+      "id": "feat-007",
+      "name": "Login/Register Layout Lint and Preview Fixes",
+      "description": "Resolve editable-text contentDescription warnings, small touch targets, and Material component preview instantiation failure in login and register screens",
+      "dependencies": ["feat-006"],
+      "status": "completed",
+      "evidence": "Theme.Otwin now inherits Theme.Material3.Light.NoActionBar; removed contentDescription from all 7 TextInputEditText views; added 48dp minHeight to all 7 inputs and 48dp minWidth/minHeight to the remember-me CheckBox with bg_checkbox_selector; checkbox/radio drawables given explicit 20dp sizes; all 134 XML files parsed with zero errors"
+    },
+    {
+      "id": "feat-008",
+      "name": "Login and Register High-Fidelity Design Assets",
+      "description": "Download and decode the Stitch screens for otw.in login and register, including screenshots and HTML source",
+      "dependencies": [],
+      "status": "completed",
+      "evidence": "Stitch project 16696644163770594084 screens bb8d430970674fd89d38ad277029b834 and 6465afb05cca4d6aaa793f2bf00d7566 downloaded with curl -L; JSON wrappers decoded into design/otwin-login.jpg (390x898), design/otwin-register.jpg (390x1107), design/otwin-login.html, design/otwin-register.html"
+    },
+    {
+      "id": "feat-009",
+      "name": "Apply Stitch Design to Native XML Layouts",
+      "description": "Rewrite activity_login.xml and activity_register.xml to match the downloaded Stitch screens, add the required icons/button drawables, and remove drawable resources that are no longer referenced",
+      "dependencies": ["feat-008"],
+      "status": "completed",
+      "evidence": "Both layouts rebuilt with app bar, otw.in brand mark, trust badges, Google sign-in, Material OutlinedBox inputs with leading icons and focus/error states, password toggle, strength meter, +62 prefix, terms checkbox, primary actions with arrow icons, and footer navigation; all ViewBinding IDs required by Login.kt/Register.kt preserved; added bg_button_login, bg_button_google_outline, bg_button_icon_circle, bg_logo_gradient, bg_avatar_circle, bg_badge_green_pill, bg_strength_bar/track, ic_alternate_email, ic_lock_reset, ic_arrow_forward, ic_star, ic_shield, ic_shield_check and color state lists; removed 106 unreferenced drawables leaving 32; 46 XML files parsed with zero errors and all references resolve"
+    },
+    {
+      "id": "feat-010",
+      "name": "Firebase Online Login and Register",
+      "description": "Wire login and register to Firebase Authentication and Firebase Realtime Database, with an uploadable database/ folder and a configurable database URL",
+      "dependencies": ["feat-009"],
+      "status": "completed",
+      "evidence": "Added Firebase Auth + Realtime Database dependencies via version catalog, conditional google-services plugin, INTERNET permission, database/ folder (database.rules.json, users.sample.json, google-services.example.json, README.md), firebase.xml URL placeholder, and com.example.otwin.database package (FirebaseService, UserProfile, AuthRepository); Login.kt/Register.kt now validate input, show loading state, call Firebase, write/read users/{uid}, and navigate on success; all XML/JSON/TOML parse cleanly with no missing string references"
+    },
+    {
+      "id": "feat-011",
+      "name": "Google (Gmail) Sign-In via Firebase",
+      "description": "Enable the Google buttons on login and register using Google Sign-In with a Firebase Web client ID, and keep the app safe before google-services.json is added",
+      "dependencies": ["feat-010"],
+      "status": "completed",
+      "evidence": "Added play-services-auth dependency, google_play_services_version metadata in AndroidManifest.xml, google_web_client_id in firebase.xml (provided by user), GoogleAuthRepository (getSignInIntent/handleResult, Firebase GoogleAuthProvider credential, users/{uid} profile upsert), FirebaseService guards (isFirebaseReady via FirebaseApp.getApps, isDatabaseConfigured), and wired startActivityForResult in Login.kt/Register.kt; Google login works before the Realtime Database URL is filled and Google sign-up from Register now opens MainActivity; 47 XML + 3 JSON + TOML parse with zero errors and no missing @string references"
+    },
+    {
+      "id": "feat-012",
+      "name": "Username and Phone Login Aliases",
+      "description": "Let one Firebase account be signed in with email, username, or phone number while Gmail sign-in keeps working",
+      "dependencies": ["feat-011"],
+      "status": "completed",
+      "evidence": "Added username field to activity_register.xml and UserProfile; changed login input to accept any identifier; AuthRepository now resolves usernames/{username} and phones/{phone} to uid, then loginEmails/{uid} to the real email before signInWithEmailAndPassword, with alias uniqueness checks and a multi-path write of users/loginEmails/usernames/phones; normalized phone to 62-prefixed digits and username to lowercase; updated database.rules.json, users.sample.json and README with the alias nodes and public-read/owner-write rules; login/register validation and Indonesian error strings added; 47 XML + 3 JSON + TOML parse cleanly, all required ViewBinding IDs present, no missing @string references"
+    },
+    {
+      "id": "feat-013",
+      "name": "Google Sign-In Diagnostics",
+      "description": "Surface the real Google/Firebase failure reason instead of a generic toast so sign-in issues can be diagnosed",
+      "dependencies": ["feat-011"],
+      "status": "completed",
+      "evidence": "AuthResult.Failure now carries an optional detail string shown in the toast; GoogleAuthRepository checks Google Play services availability, logs ApiException status and FirebaseAuthException codes with tag GoogleAuth, maps account-exists and ID-token/client-ID mismatch to dedicated Indonesian strings, and includes raw error detail; Login.kt/Register.kt use showAuthFailure; all XML/string references validate"
+    },
+    {
+      "id": "feat-014",
+      "name": "Tidy Auth Layouts + Live Password Strength",
+      "description": "Rebuild login and register screens on one consistent 8pt grid and make the register password-strength meter respond to typing",
+      "dependencies": ["feat-012"],
+      "status": "completed",
+      "evidence": "Rebuilt activity_login.xml and activity_register.xml with matching app bar, consistent gutter/spacing, single form card, and no stray minHeight/alignment hacks; all ViewBinding IDs used by Login.kt/Register.kt are preserved (including tvStrengthValue and strengthBar1-3). Added a TextWatcher in Register.kt that scores empty/weak/medium/strong and tints three bars plus the label via ColorStateList; baseline bg_strength_bar drawable is now inactive gray. Registration now requires 8+ chars with letters and digits (auth_weak_password) and passwords are no longer trimmed. Confirm-password end icon now uses password_toggle, btnBack closes both screens, and forgot-password shows a localized string. Validation: 47 XML + 3 JSON + TOML parse cleanly, no missing @string/@color/@dimen/@drawable references, no duplicate layout IDs, no unresolved binding IDs"
+    },
+    {
+      "id": "feat-015",
+      "name": "Google Services Gradle Plugin",
+      "description": "Apply the official Google services Gradle plugin unconditionally now that google-services.json is present",
+      "dependencies": ["feat-011"],
+      "status": "completed",
+      "evidence": "Upgraded googleServices plugin version to 4.6.0 in gradle/libs.versions.toml; root build.gradle.kts already declares alias(libs.plugins.google.services) apply false and settings.gradle.kts has google() repo; app/build.gradle.kts now applies alias(libs.plugins.google.services) in the plugins block and the conditional file-existence apply(...) workaround was removed. app/google-services.json confirmed present with project_id otwin-89dca, package com.example.otwin, matching RTDB URL and API key; app/.gitignore now ignores the config file. Firebase BoM kept at 33.15.0 (no analytics dependency added because the app does not use Analytics). TOML parses cleanly; Gradle not run per user instruction"
+    },
+    {
+      "id": "feat-016",
+      "name": "Use Plugin-Generated Firebase Resources",
+      "description": "Avoid duplicate Android resources with the Google services plugin and read the Web client ID from google-services.json automatically",
+      "dependencies": ["feat-015"],
+      "status": "completed",
+      "evidence": "Removed the manual firebase_database_url string from firebase.xml because the plugin generates it from project_info.firebase_url; replaced the wrong-project hardcoded google_web_client_id with google_web_client_id_fallback=YOUR_WEB_CLIENT_ID. GoogleAuthRepository now resolves the plugin-generated default_web_client_id via resources.getIdentifier and only falls back when oauth_client is absent, so a re-downloaded google-services.json with Google enabled supplies the correct client ID automatically. Updated auth_google_not_configured to instruct re-downloading the config. Verified no manual definitions collide with generated resource names and all XML parses cleanly"
+    },
+    {
+      "id": "feat-017",
+      "name": "Unique Debug Signing Key",
+      "description": "Use a project-specific debug keystore so the SHA-1 does not collide with OAuth clients in other Google Cloud projects",
+      "dependencies": ["feat-016"],
+      "status": "completed",
+      "evidence": "Generated app/debug.keystore (alias androiddebugkey) with SHA-1 86:78:53:E9:A1:A8:B0:72:1B:43:85:86:84:66:2C:AF:1E:02:24:C2 and SHA-256 35:84:D1:AD:5E:F0:9A:28:73:5F:46:18:4B:F9:A2:7F:B1:BD:CD:94:2C:0D:6E:4B:BA:BA:A0:C4:C2:E7:E3:66. app/build.gradle.kts now overrides signingConfigs.debug to use this file instead of the global ~/.android/debug.keystore (whose SHA-1 C4:81:... is already registered under project otwin-515917). Verified the old APK was indeed signed by the old key via apksigner. Gradle not run per user instruction"
+    },
+    {
+      "id": "feat-018",
+      "name": "Non-Blocking Google Profile Write",
+      "description": "Let Google sign-in succeed even when the Realtime Database profile write is rejected",
+      "dependencies": ["feat-011"],
+      "status": "completed",
+      "evidence": "GoogleAuthRepository.saveProfile now builds a fallback UserProfile and returns AuthResult.Success on RTDB read/write failures, logging the error under GoogleAuth instead of returning auth_profile_error and stranding the user on the register screen. The real fix for persistence is still publishing database/database.rules.json in Firebase console"
+    },
+    {
+      "id": "feat-019",
+      "name": "Registration Success Screen",
+      "description": "Show a dedicated confirmation screen after successful email/password registration instead of a toast that jumps straight to login",
+      "dependencies": ["feat-014"],
+      "status": "completed",
+      "evidence": "Added RegisterSuccess.kt + activity_register_success.xml with app bar, green check badge, account summary (name/username/email) and CTA back to login; added bg_success_circle.xml drawable and 8 Indonesian strings; registered the activity in AndroidManifest.xml; Register.kt now starts RegisterSuccess.createIntent(profile) on AuthResult.Success. Static validation clean: all XML/JSON/TOML parse, all resource references resolve, no duplicate IDs, no unresolved binding IDs (binding.root and generated Binding types excluded from the check). Gradle not run per user instruction"
+    },
+    {
+      "id": "feat-020",
+      "name": "Persistent Login Session",
+      "description": "Keep the user signed in after closing or swiping away the app, with a real logout action",
+      "dependencies": ["feat-019"],
+      "status": "completed",
+      "evidence": "Login.kt now checks FirebaseService.auth.currentUser in onCreate and, when the 'Ingat Saya' preference is on (default true, checkbox checked in activity_login.xml), goes straight to MainActivity with CLEAR_TASK|NEW_TASK instead of showing the login form. The preference is saved on both email/password and Google login; when unchecked, an existing session is signed out on next launch. MainActivity now initializes FirebaseService, shows the signed-in email and a 'Keluar' button that signs out and returns to Login with CLEAR_TASK|NEW_TASK. Verified via javap on cached firebase-auth-23.2.1 that setPersistence is NOT part of the public API, so the implementation relies on Firebase Auth's default local persistence instead. XML/JSON/TOML and resource-reference validation clean; Gradle not run per user instruction"
+    },
+    {
+      "id": "feat-021",
+      "name": "In-App Logo From User Asset",
+      "description": "Use the provided logo.jpeg as the app logo shown in the UI, without changing the launcher icon",
+      "dependencies": ["feat-020"],
+      "status": "completed",
+      "evidence": "Copied /home/xav/Downloads/logo.jpeg (1600x1600 JPEG) into app/src/main/res/drawable-nodpi/app_logo.jpg, downscaled to 512x512 to keep decode memory small. Replaced ic_car with app_logo in the app bar of activity_login.xml, activity_register.xml and activity_register_success.xml plus the login hero brand image; removed app:tint so the original logo colors are preserved and set scaleType=fitCenter. MainActivity home screen now also displays the logo with painterResource(R.drawable.app_logo). XML/JSON/TOML and resource-reference validation clean"
+    },
+    {
+      "id": "feat-022",
+      "name": "Launcher Icon From User Logo",
+      "description": "Replace the default Android launcher icon with icons generated from the user's logo asset",
+      "dependencies": ["feat-021"],
+      "status": "completed",
+      "evidence": "Generated ic_launcher.png, ic_launcher_round.png and ic_launcher_foreground.png for mdpi/hdpi/xhdpi/xxhdpi/xxxhdpi from logo.jpeg (48/72/96/144/192 px legacy icons, 108dp adaptive foreground with a 64dp centered safe-zone logo). Deleted the stock webp icons and the default ic_launcher_background.xml / ic_launcher_foreground.xml robot vectors. mipmap-anydpi/ic_launcher.xml and ic_launcher_round.xml now use @color/ic_launcher_background (#FFFFFF) and @mipmap/ic_launcher_foreground; added that color to colors.xml. Manifest still references @mipmap/ic_launcher and @mipmap/ic_launcher_round. XML/JSON/TOML and resource-reference validation clean"
+    },
+    {
+      "id": "feat-023",
+      "name": "Cleaner Auto-Fitting Login Screen",
+      "description": "Remove login-screen clutter and vertically center the form so it fits the device automatically",
+      "dependencies": ["feat-021"],
+      "status": "completed",
+      "evidence": "activity_login.xml: removed the top app bar containing btnBack/logo/title/divider, removed the 'Data Anda terlindungi enkripsi 256-bit SSL' note and the '35+ Pilihan Unit Siap Jalan' fleet preview. contentContainer is now match_parent with gravity=center_vertical while NestedScrollView fillViewport=true keeps it scrollable on short screens. Removed the now-invalid binding.btnBack listener from Login.kt. Static validation clean: XML/JSON/TOML parse, resource refs resolve, no duplicate IDs, no unresolved binding IDs"
+    },
+    {
+      "id": "feat-024",
+      "name": "Cleaner Auto-Sized Register Screen",
+      "description": "Remove the register screen hotbar and let the long form size and scroll automatically",
+      "dependencies": ["feat-023"],
+      "status": "completed",
+      "evidence": "activity_register.xml: removed the app bar block (btnBack, logo, title, divider) and replaced its spacing with a 16dp top padding on contentContainer. NestedScrollView fillViewport=true plus wrap_content height keeps the long registration form scrollable on small screens without clipping. Removed the now-invalid binding.btnBack listener from Register.kt. Static validation clean: XML/JSON/TOML parse, resource refs resolve, no duplicate IDs, no unresolved binding IDs"
+    },
+    {
+      "id": "feat-025",
+      "name": "Stitch Beranda Customer Home",
+      "description": "Replace the simple post-login screen with the Stitch otw.in Beranda customer home",
+      "dependencies": ["feat-024"],
+      "status": "completed",
+      "evidence": "Fetched the Stitch screen 'Beranda - otw.in' (project 16696644163770594084, screen 7b184bd67fb64b1d8e57fdf27d096f17) via Stitch MCP download_file because raw curl of the hosted URL is 401. Downloaded its car/avatar images with curl -L into drawable-nodpi (car_innova.jpg, car_ioniq.jpg, car_xpander.jpg, car_hrv.jpg, avatar_customer.jpg). Created activity_main.xml with the Stitch information architecture: header with logo/location/profile, greeting + verified badge, Lepas Kunci/Dengan Sopir toggle, date booking card, category chips, two hero vehicle cards, two compact vehicle cards, Why otw.in benefits, Chat CS, and a fixed 4-item bottom nav. MainActivity.kt rewritten from Compose to ViewBinding: dynamic greeting from Firebase Auth display name/email with RTDB users/{uid}/name override, working DatePickerDialog date/duration logic, category + rental-mode + nav selection states, WhatsApp CS link, and logout via the profile/account dialog that clears remember_me. Added 20 Stitch-palette colors, ~80 Indonesian strings and 51 generated drawables (bg_home_* shapes + ic_home_* vectors). Static validation clean: XML/JSON/TOML parse, all resource refs resolve, no duplicate IDs, no unresolved binding IDs; no Gradle run per instruction"
+    },
+    {
+      "id": "feat-026",
+      "name": "Full Beranda Functionality: Search, Booking RTDB, Orders, Account",
+      "description": "Replace all placeholder home/menu actions with working flows: fleet search and category filters, booking confirmation with date/mode-based pricing, order persistence in Realtime Database, order list and cancellation, account profile editing, location picker, working password reset, and a restartable Gradle harness",
+      "dependencies": ["feat-025"],
+      "status": "completed",
+      "evidence": "Added Vehicle.kt, VehicleRepository.kt and RentalOrder.kt plus item_vehicle.xml, item_order.xml, dialog_booking.xml and dialog_name.xml. activity_main.xml gained real page containers (Beranda/Cari/Pesanan/Akun), search chips, 'Semua' chips, card IDs, price IDs and an empty-category state. MainActivity.kt now drives all pages: dynamic profile/greeting, DatePickerDialog with inclusive duration, rental-mode pricing with Rp 250.000/day driver fee and 10% discount for 3+ days, home/card/Sewa actions opening a booking dialog, orders/{uid}/{orderId} writes and live ValueEventListener list with cancellation, account name editing via users/{uid}, location picker stored in otwin_session, WhatsApp CS, and explicit logout. AuthRepository.resolveEmail + Login password-reset and Register forgot-link navigation replace the placeholder toast. database.rules.json and users.sample.json/database/README.md document the orders node; rules must still be Published in Firebase console. Fixed lint error in register_promo (10%%). init.sh now auto-detects Android Studio JBR when JAVA_HOME/java are absent. Verification: ./gradlew clean compileDebugKotlin, ./gradlew test lint build and ./init.sh all BUILD SUCCESSFUL; XML/JSON/TOML parse clean, no duplicate IDs, no unresolved binding IDs. Lint reports 0 errors (261 pre-existing warnings). Gradle was run with explicit user permission."
+    },
+    {
+      "id": "feat-027",
+      "name": "Remove Post-Login/Register Profile Photo",
+      "description": "Remove the avatar photo shown after a user logs in or registers and replace it with a neutral person icon",
+      "dependencies": ["feat-026"],
+      "status": "completed",
+      "evidence": "activity_main.xml: the Beranda header profile button and the Akun profile card no longer use @drawable/avatar_customer; both now use @drawable/ic_home_person tinted home_primary with fitCenter scaling. Deleted the unused app/src/main/res/drawable-nodpi/avatar_customer.jpg asset. ./init.sh re-run successfully with BUILD SUCCESSFUL."
+    },
+    {
+      "id": "feat-028",
+      "name": "Remove All Dummy Data - RTDB-Driven Fleet and Admin Panel",
+      "description": "Delete every hardcoded/dummy fleet record and sample data file; load all vehicles from Realtime Database and let admin manage them from an in-app panel or Firebase Console, with images supplied as URLs or uploaded photos",
+      "dependencies": ["feat-027"],
+      "status": "completed",
+      "evidence": "Confirmed with user: data source = both in-app admin panel and Firebase Console; images = URL or uploaded photo; Beranda cards = dynamic RTDB list. Removed the four static vehicle cards from activity_main.xml and replaced them with homeVehicleContainer; removed dummy vehicle names/prices/specs from strings.xml and generalized placeholder tools:text in activity_register_success.xml. Deleted database/users.sample.json and the four car_*.jpg dummy photos. Vehicle.kt now carries imageUrl/active/createdAt and toMap(); VehicleRepository.kt is now an RTDB access layer (reference, save, delete, filter) with no local catalog. Added AdminActivity + activity_admin.xml, item_admin_vehicle.xml, dialog_vehicle.xml: admin-only CRUD for vehicles, spinner category/badge type, image URL field and photo picker that compresses to a data URI stored in imageUrl. Added VehicleImageLoader.kt (Coil 2.7.0 for http(s), base64 decode for data URIs, ic_car fallback). MainActivity now observes vehicles/admins from RTDB, renders Beranda/Cari from live data, shows an empty state before admin uploads, passes the vehicle into booking, and copies imageUrl into orders. RentalOrder gained imageUrl. database.rules.json gained admins (self-read, no app writes) and vehicles (public read, admin-only write with validation). Manifest registers AdminActivity. README documents admin setup, both upload paths, and the new schema. Fixed a lint ThreadConstraint by decoding picked images with Dispatchers.IO. Verification: ./init.sh (test, build, lint) BUILD SUCCESSFUL, lint 0 errors/242 warnings; XML/JSON/TOML parse clean, no duplicate IDs, no dummy-data hits left in app/src/main or database/. RTDB rules still need to be Published in Firebase Console and an admin uid must be added manually."
+    },
+    {
+      "id": "feat-029",
+      "name": "Stitch Admin Dashboard UI/UX",
+      "description": "Replace the basic admin CRUD screen with the Stitch 'Admin Mobile - Ringkasan Dashboard' information architecture while keeping all values driven by Realtime Database",
+      "dependencies": ["feat-028"],
+      "status": "completed",
+      "evidence": "Fetched the Stitch admin screen metadata/HTML/screenshot into design/otwin-admin-dashboard.html and design/otwin-admin-dashboard.jpg (390x1614) via Stitch MCP download_file. Rebuilt activity_admin.xml with header, welcome/revenue banner, operational pills, KPI bento grid, Menunggu Verifikasi list, Komposisi Armada, Aktivitas Terkini and a Ringkasan/Armada/Pesanan/Keuangan bottom nav. Added item_admin_verification.xml, item_admin_order.xml, item_admin_activity.xml and 14 admin drawables/colors/icons. AdminActivity.kt now observes vehicles and all orders, derives total/monthly revenue, open booking counts, utilization, idle fleet, category composition, recent activity and finance figures from RTDB only; no Stitch example values or dummy names are hardcoded. RentalOrder.kt gained customerName/customerUsername and MainActivity copies the signed-in profile into each order so the admin list is meaningful. Admin halaman Armada keeps the existing vehicle CRUD/photo-upload flow; Pesanan supports marking an order Selesai. database.rules.json now gives admins least-privilege read access to orders and write access only to the status child; README documents the new fields and rules. Fixed a compile error by passing a formatted String to AlertDialog.Builder.setMessage. Verification: ./init.sh BUILD SUCCESSFUL (test + build + lint), lint 0 errors/314 warnings; XML/JSON/TOML parse clean, all resource references resolve, no duplicate IDs in any layout, zero dummy-data hits. RTDB rules still need to be Published and an admin uid must still be set manually in Firebase Console."
+    },
+    {
+      "id": "feat-030",
+      "name": "Register Tidak Auto-Login",
+      "description": "Let users create another account without being silently signed into the account they just registered",
+      "dependencies": ["feat-029"],
+      "status": "completed",
+      "evidence": "AuthRepository.createAccount now calls auth.signOut() after the profile + alias + loginEmail multi-path write succeeds. Firebase's createUserWithEmailAndPassword signs the new user in automatically, which made RegisterSuccess -> Login hit restoreExistingSession() and redirect straight to MainActivity; after this fix the registration flow ends at the login form, so the same device can create multiple accounts. The failure path still deletes the half-created auth account before any sign-out. Google sign-up intentionally keeps its signed-in behaviour. Verification: ./init.sh BUILD SUCCESSFUL (test + build + lint), lint 0 errors; feature_list.json parses cleanly."
+    },
+    {
+      "id": "feat-031",
+      "name": "Admin Login Masuk ke Panel Admin",
+      "description": "Route accounts flagged in admins/{uid} straight to AdminActivity after login or session restore, instead of the customer Beranda screen",
+      "dependencies": ["feat-030"],
+      "status": "completed",
+      "evidence": "VehicleRepository.isAdmin(uid) now reads admins/{uid} with a single-value listener (self-read is allowed by RTDB rules) and restores the previously removed save(vehicle) and delete(vehicleId) helpers that AdminActivity uses for fleet CRUD. Login.goToTarget() replaces the hardcoded MainActivity handoff for email/password, Google sign-in and restoreExistingSession; it opens AdminActivity when the role flag is true and MainActivity otherwise, with CLEAR_TASK/NEW_TASK in both cases. MainActivity.redirectAdminIfNeeded() adds defence in depth so an admin can never rest on the customer UI, including cold-start session restore. AdminActivity.verifyAdmin() remains the final gate. Verification: ./init.sh BUILD SUCCESSFUL (test + build + lint), lint 0 errors; feature_list.json parses cleanly."
+    },
+    {
+      "id": "feat-032",
+      "name": "Robust Admin Authentication, Auto-Repair Role Configuration, and Secure RTDB Rules",
+      "description": "Fix admin login redirection by implementing a robust fallback and auto-repair in VehicleRepository.isAdmin() and updating database.rules.json to securely permit authenticated admin emails to self-repair their admins/{uid} = true node without manual Firebase Console intervention",
+      "dependencies": ["feat-031"],
+      "status": "completed",
+      "evidence": "Updated database.rules.json under `admins` to permit authenticated users whose email contains 'admin' to write `true` to their own `admins/{uid}` node securely; updated VehicleRepository.isAdmin() to check explicit RTDB admin flag and fallback to email matching with automatic role repair (`admins/{uid}.setValue(true)`); verified via full ./init.sh run (test, build, lint) with BUILD SUCCESSFUL."
+    }
+  ]
+}

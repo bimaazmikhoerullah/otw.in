@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imgAdminActivity"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_home_surface_low"
+        android:padding="7dp"
+        android:src="@drawable/ic_home_receipt"
+        app:tint="@color/home_primary" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAdminActivityTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:textColor="@color/home_on_surface"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Pesanan baru" />
+
+            <TextView
+                android:id="@+id/tvAdminActivityTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/home_on_surface_variant"
+                android:textSize="10sp"
+                tools:text="10 mnt lalu" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAdminActivityDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/home_on_surface_variant"
+            android:textSize="11sp"
+            tools:text="Armada • Lepas Kunci" />
+    </LinearLayout>
+</LinearLayout>

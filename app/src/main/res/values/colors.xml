@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primary">#2563EB</color>
+    <color name="primary_light">#63B3ED</color>
+    <color name="primary_dark">#1A52CC</color>
+
+    <!-- Background Colors -->
+    <color name="background_screen">#F8FAFC</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="secondary_text">#64748B</color>
+
+    <!-- Status Colors -->
+    <color name="error_color">#EF4444</color>
+    <color name="success_color">#22C55E</color>
+
+    <!-- Border Color -->
+    <color name="border_color">#E2E8F0</color>
+
+    <!-- otw.in Brand Palette -->
+    <color name="white">#FFFFFF</color>
+    <color name="dark_navy">#0F172A</color>
+
+    <!-- Launcher icon background (logo asset has a white backdrop) -->
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="deep_blue">#1D4ED8</color>
+    <color name="primary_pressed">#1E40AF</color>
+    <color name="secondary_green">#22C55E</color>
+    <color name="green_pressed">#16A34A</color>
+    <color name="light_blue">#EFF6FF</color>
+    <color name="light_green">#F0FDF4</color>
+    <color name="background_gray">#F8FAFC</color>
+    <color name="border_gray">#E2E8F0</color>
+    <color name="error_red">#EF4444</color>
+    <color name="error_pressed">#DC2626</color>
+    <color name="error_light">#FEF2F2</color>
+
+    <!-- Interaction / State Colors -->
+    <color name="blue_border">#93C5FD</color>
+    <color name="blue_pale">#DBEAFE</color>
+    <color name="disabled_background">#CBD5E1</color>
+    <color name="warning_amber">#F59E0B</color>
+    <color name="warning_light">#FFFBEB</color>
+    <color name="featured_gold">#FBBF24</color>
+    <color name="ripple_white">#33FFFFFF</color>
+    <color name="ripple_primary">#1F2563EB</color>
+    <color name="ripple_dark">#1F0F172A</color>
+    <color name="shadow_color">#140F172A</color>
+
+    <!-- Beranda / customer home palette (from Stitch otw.in) -->
+    <color name="home_background">#FAF8FF</color>
+    <color name="home_surface">#FFFFFF</color>
+    <color name="home_surface_low">#F2F3FF</color>
+    <color name="home_surface_container">#EAEDFF</color>
+    <color name="home_primary">#0037B0</color>
+    <color name="home_primary_dark">#0039B5</color>
+    <color name="home_primary_container">#1D4ED8</color>
+    <color name="home_primary_fixed">#DCE1FF</color>
+    <color name="home_secondary">#006C4A</color>
+    <color name="home_secondary_container">#82F5C1</color>
+    <color name="home_secondary_fixed">#85F8C4</color>
+    <color name="home_on_surface">#131B2E</color>
+    <color name="home_on_surface_variant">#434655</color>
+    <color name="home_outline_variant">#C4C5D7</color>
+    <color name="home_amber">#F59E0B</color>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <size android:height="@dimen/auth_secondary_button_height" />
+            <solid android:color="@color/background_gray" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/border_gray" />
+            <corners android:radius="@dimen/auth_component_radius" />
+        </shape>
+    </item>
+    <item>
+        <ripple android:color="@color/ripple_dark">
+            <item>
+                <shape android:shape="rectangle">
+                    <size android:height="@dimen/auth_secondary_button_height" />
+                    <solid android:color="@color/white" />
+                    <stroke
+                        android:width="1dp"
+                        android:color="@color/border_gray" />
+                    <corners android:radius="@dimen/auth_component_radius" />
+                </shape>
+            </item>
+        </ripple>
+    </item>
+</selector>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Material components require a Material theme; the platform theme cannot inflate them. -->
+    <style name="Theme.Otwin" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secondary_green</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/dark_navy</item>
+        <item name="android:windowBackground">@color/background_gray</item>
+        <item name="android:statusBarColor">@color/deep_blue</item>
+    </style>
+</resources>

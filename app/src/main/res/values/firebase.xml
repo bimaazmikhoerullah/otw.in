@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Jangan definisikan firebase_database_url / default_web_client_id di sini.
+        Keduanya dihasilkan otomatis oleh plugin google-services dari
+        app/google-services.json saat Gradle sync.
+    -->
+
+    <!--
+        Fallback saja. Isi dengan Web client ID hanya jika google-services.json
+        belum mengandung oauth_client (client_type 3). Biarkan YOUR_WEB_CLIENT_ID
+        supaya tombol Google menampilkan pesan "belum siap", bukan memakai client
+        ID dari project lain.
+    -->
+    <string name="google_web_client_id_fallback">YOUR_WEB_CLIENT_ID</string>
+</resources>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Login Screen Strings -->
+    <string name="login_app_name">otw.in</string>
+    <string name="login_email_hint">Email or Phone Number</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_login_button">Login</string>
+    <string name="login_forgot_password">Forgot password?</string>
+    <string name="login_register_link">Do not have an account? Register</string>
+    <string name="login_password_toggle">Toggle password visibility</string>
+    <string name="login_remember_me">Remember me</string>
+
+    <!-- Register Screen Strings -->
+    <string name="register_app_name">otw.in</string>
+    <string name="register_name_hint">Full Name</string>
+    <string name="register_email_hint">Email Address</string>
+    <string name="register_password_hint">Password</string>
+    <string name="register_confirm_password_hint">Confirm Password</string>
+    <string name="register_register_button">Register</string>
+    <string name="register_forgot_password">Forgot password?</string>
+    <string name="register_login_link">Already have an account? Login</string>
+    <string name="register_phone_hint">Phone Number</string>
+    <string name="register_terms">I agree to the Terms and Conditions</string>
+
+    <!-- General -->
+    <string name="action_login">Login</string>
+    <string name="action_register">Register</string>
+    <string name="app_name">otw.in</string>
+    <string name="google_sign_in">Sign in with Google</string>
+    <string name="or_continue_with">or continue with</string>
+
+    <!-- Login — Stitch-inspired premium screen -->
+    <string name="login_back">Kembali</string>
+    <string name="login_trusted">Terpercaya</string>
+    <string name="login_trust_badge">Mobil Bersih &amp; Terawat</string>
+    <string name="login_heading">Masuk ke Akun Anda</string>
+    <string name="login_subtitle">Sewa mobil impian dengan cepat, aman, dan tanpa ribet.</string>
+    <string name="login_identifier_label">Email, username, atau No. HP</string>
+    <string name="login_identifier_hint">nama@email.com / username / 0812xxxx</string>
+    <string name="login_password_label">Kata Sandi</string>
+    <string name="login_password_placeholder">Masukkan kata sandi</string>
+    <string name="login_remember_me_id">Ingat Saya</string>
+    <string name="login_forgot_password_id">Lupa Kata Sandi?</string>
+    <string name="login_submit">Masuk Sekarang</string>
+    <string name="login_security_note">Data Anda terlindungi enkripsi 256-bit SSL</string>
+    <string name="login_fleet_eyebrow">Armada Terlengkap</string>
+    <string name="login_fleet_title">35+ Pilihan Unit Siap Jalan</string>
+    <string name="login_fleet_desc">Lepas kunci atau dengan sopir berpengalaman</string>
+    <string name="login_register_prompt">Belum punya akun?</string>
+    <string name="login_register_link_id">Daftar Akun Baru</string>
+    <string name="google_sign_in_id">Masuk dengan Google</string>
+    <string name="or_email">atau masuk dengan email</string>
+
+    <!-- Register — Stitch-inspired premium screen -->
+    <string name="register_promo">Diskon 10%% Sewa Pertama</string>
+    <string name="register_heading">Buat Akun otw.in</string>
+    <string name="register_subtitle">Daftar sekarang untuk kemudahan sewa mobil lepas kunci &amp; layanan dengan sopir profesional.</string>
+    <string name="register_feature_one">Verifikasi Cepat 5 Menit</string>
+    <string name="register_feature_two">Booking Unit Tanpa DP</string>
+    <string name="register_name_label">Nama Lengkap (sesuai KTP)</string>
+    <string name="register_name_hint_id">Nama lengkap Anda</string>
+    <string name="register_phone_label">Nomor WhatsApp / HP</string>
+    <string name="register_phone_hint_id">812 3456 7890</string>
+    <string name="register_otp_badge">Kode OTP Instan</string>
+    <string name="register_email_label">Alamat Email</string>
+    <string name="register_email_hint_id">nama@email.com</string>
+    <string name="register_password_label">Buat Kata Sandi</string>
+    <string name="register_password_hint_id">Minimal 8 karakter (huruf &amp; angka)</string>
+    <string name="register_strength_label">Kekuatan Sandi:</string>
+    <string name="register_strength_value">Kuat</string>
+    <string name="strength_empty">Belum diisi</string>
+    <string name="strength_weak">Lemah</string>
+    <string name="strength_medium">Sedang</string>
+    <string name="strength_strong">Kuat</string>
+    <string name="register_confirm_label">Konfirmasi Kata Sandi</string>
+    <string name="register_confirm_hint_id">Ulangi kata sandi</string>
+    <string name="register_terms_agreement">Saya menyetujui Syarat &amp; Ketentuan serta Kebijakan Privasi otw.in.</string>
+    <string name="register_submit">Daftar Akun</string>
+    <string name="register_or">atau</string>
+    <string name="register_google">Daftar Lebih Cepat dengan Google</string>
+    <string name="register_login_prompt">Sudah memiliki akun?</string>
+    <string name="register_login_link_id">Masuk di sini</string>
+    <string name="trust_ssl">256-bit Enkripsi SSL</string>
+    <string name="trust_privacy">Data Privasi Aman</string>
+
+    <!-- Firebase / authentication -->
+    <string name="auth_processing">Memproses…</string>
+    <string name="auth_not_configured">Firebase belum dikonfigurasi. Tambahkan google-services.json dan URL database.</string>
+    <string name="login_success">Login berhasil. Selamat datang di otw.in!</string>
+    <string name="register_success">Akun berhasil dibuat. Silakan masuk.</string>
+    <string name="register_success_badge">Pendaftaran Berhasil</string>
+    <string name="register_success_title">Akun kamu sudah siap!</string>
+    <string name="register_success_message">Sekarang kamu bisa masuk pakai email, username, atau nomor HP yang kamu daftarkan.</string>
+    <string name="register_success_name_label">Nama</string>
+    <string name="register_success_username_label">Username</string>
+    <string name="register_success_email_label">Email</string>
+    <string name="register_success_cta">Masuk Sekarang</string>
+    <string name="register_success_login_link">Kembali ke halaman masuk</string>
+    <string name="auth_invalid_credentials">Email atau kata sandi salah.</string>
+    <string name="auth_email_in_use">Email ini sudah terdaftar.</string>
+    <string name="auth_weak_password">Kata sandi minimal 8 karakter dan mengandung huruf serta angka.</string>
+    <string name="auth_profile_error">Akun dibuat, tetapi profil gagal disimpan. Silakan coba masuk.</string>
+    <string name="auth_generic_error">Terjadi kesalahan. Silakan coba lagi.</string>
+    <string name="auth_name_required">Nama tidak boleh kosong.</string>
+    <string name="auth_phone_required">Nomor telepon tidak boleh kosong.</string>
+    <string name="auth_email_required">Email tidak boleh kosong.</string>
+    <string name="auth_password_required">Kata sandi tidak boleh kosong.</string>
+    <string name="auth_password_short">Kata sandi minimal 6 karakter.</string>
+    <string name="auth_confirm_required">Konfirmasi kata sandi wajib diisi.</string>
+    <string name="auth_password_mismatch">Kata sandi tidak cocok.</string>
+    <string name="auth_invalid_email">Email tidak valid.</string>
+    <string name="auth_login_required">Email, username, atau nomor HP wajib diisi.</string>
+    <string name="auth_terms_required">Setujui Syarat &amp; Ketentuan terlebih dahulu.</string>
+    <string name="auth_google_not_configured">Google Sign-In belum siap. Aktifkan provider Google di Firebase, download ulang google-services.json ke folder app, lalu Sync Gradle.</string>
+    <string name="auth_google_error">Login Google gagal. Silakan coba lagi.</string>
+    <string name="auth_google_cancelled">Login Google dibatalkan.</string>
+    <string name="auth_google_play_services">Google Play services tidak tersedia di perangkat ini.</string>
+    <string name="auth_google_invalid_client">Web client ID Google tidak cocok dengan project Firebase. Cek client ID di Firebase Console.</string>
+    <string name="auth_google_account_exists">Email ini sudah terdaftar dengan kata sandi. Masuk pakai email dan kata sandi.</string>
+
+    <!-- Username / phone aliases -->
+    <string name="register_username_label">Username</string>
+    <string name="register_username_hint">3-20 karakter, huruf kecil, angka, atau _</string>
+    <string name="register_username_helper">3-20 karakter, huruf kecil, angka, atau _</string>
+    <string name="auth_username_required">Username tidak boleh kosong.</string>
+    <string name="auth_username_invalid">Username harus 3-20 karakter (a-z, 0-9, _).</string>
+    <string name="auth_username_taken">Username sudah dipakai pengguna lain.</string>
+    <string name="auth_phone_invalid">Nomor HP tidak valid (minimal 10 digit).</string>
+    <string name="auth_phone_taken">Nomor HP sudah terdaftar.</string>
+    <string name="auth_identifier_not_found">Email, username, atau nomor HP tidak ditemukan.</string>
+
+    <!-- Home / session -->
+    <string name="main_welcome">Selamat datang di otw.in</string>
+    <string name="main_logged_in_as">Masuk sebagai %1$s</string>
+    <string name="main_logout">Keluar</string>
+
+    <!-- Beranda / customer home -->
+    <string name="home_brand_otw">otw</string>
+    <string name="home_brand_in">.in</string>
+    <string name="home_default_start_date">Pilih tanggal</string>
+    <string name="home_default_end_date">Pilih tanggal</string>
+    <string name="home_default_start_time">09:00 WIB</string>
+    <string name="home_default_end_time">18:00 WIB</string>
+    <string name="home_welcome_back">Selamat datang kembali ✨</string>
+    <string name="home_greeting">Halo, %1$s!</string>
+    <string name="home_verified">Akun Terverifikasi</string>
+    <string name="home_mode_rent">Lepas Kunci</string>
+    <string name="home_mode_driver">Dengan Sopir</string>
+    <string name="home_start_rent">Mulai Sewa</string>
+    <string name="home_end_rent">Selesai Sewa</string>
+    <string name="home_duration">Durasi Rental: %1$s</string>
+    <string name="home_duration_days">%1$d Hari Penuh</string>
+    <string name="home_save_10">Hemat 10%%</string>
+    <string name="home_search_fleet">Cari Armada Tersedia</string>
+    <string name="home_categories">Kategori Pilihan</string>
+    <string name="home_all_types">Semua Tipe</string>
+    <string name="home_category_mpv">MPV Keluarga</string>
+    <string name="home_category_city">City Car</string>
+    <string name="home_category_ev">EV Listrik</string>
+    <string name="home_category_suv">SUV Tangguh</string>
+    <string name="home_category_sedan">Sedan Mewah</string>
+    <string name="home_recommendations">Rekomendasi Terpopuler</string>
+    <string name="home_recommendations_sub">Armada favorit bergaransi siap jalan</string>
+    <string name="home_see_all">Lihat Semua</string>
+    <string name="home_per_day">/hari</string>
+    <string name="home_rent_now">Sewa</string>
+    <string name="home_why_eyebrow">Standar Kenyamanan Tinggi</string>
+    <string name="home_why_title">Kenapa Memilih otw.in?</string>
+    <string name="home_benefit_1">Garansi Unit Prima</string>
+    <string name="home_benefit_1_desc">Diservis rutin di bengkel resmi berkala.</string>
+    <string name="home_benefit_2">Asuransi All-Risk</string>
+    <string name="home_benefit_2_desc">Proteksi komprehensif tanpa rasa cemas.</string>
+    <string name="home_benefit_3">Bantuan 24/7</string>
+    <string name="home_benefit_3_desc">Respon cepat darurat derek dan mekanik.</string>
+    <string name="home_benefit_4">Antar Stasiun/Airport</string>
+    <string name="home_benefit_4_desc">Gratis pengantaran unit langsung ke pintu Anda.</string>
+    <string name="home_cs_title">Butuh bantuan sewa mendesak?</string>
+    <string name="home_cs_desc">Chat dengan Admin via WhatsApp</string>
+    <string name="home_chat_cs">Chat CS</string>
+    <string name="home_nav_beranda">Beranda</string>
+    <string name="home_nav_cari">Cari</string>
+    <string name="home_nav_pesanan">Pesanan</string>
+    <string name="home_nav_akun">Akun</string>
+    <string name="home_location">Jakarta</string>
+    <string name="home_profile">Buka Profil Akun</string>
+    <string name="home_account_title">Akun Saya</string>
+    <string name="home_driver_mode">Mode dengan sopir aktif.</string>
+    <string name="home_chat_unavailable">WhatsApp tidak tersedia di perangkat ini.</string>
+    <string name="home_guest">Pelanggan</string>
+
+    <!-- Search / Cari -->
+    <string name="search_title">Cari Armada</string>
+    <string name="search_hint">Cari merk atau model mobil</string>
+    <string name="search_result_count">Ditemukan %1$d armada</string>
+    <string name="search_empty">Tidak ada armada yang cocok.</string>
+
+    <!-- Orders / Pesanan -->
+    <string name="orders_title">Pesanan Saya</string>
+    <string name="orders_summary">Total pesanan: %1$d</string>
+    <string name="orders_empty">Belum ada pesanan. Sewa armada pertamamu sekarang.</string>
+    <string name="orders_cancel">Batalkan</string>
+    <string name="orders_date_range">%1$s – %2$s</string>
+    <string name="orders_duration">%1$d hari • %2$s</string>
+    <string name="orders_total">Total %1$s</string>
+    <string name="orders_status_processing">Diproses</string>
+    <string name="orders_status_cancelled">Dibatalkan</string>
+    <string name="orders_status_completed">Selesai</string>
+    <string name="orders_cancel_confirm">Batalkan pesanan ini?</string>
+    <string name="orders_cancelled">Pesanan dibatalkan.</string>
+    <string name="orders_load_error">Gagal memuat pesanan.</string>
+
+    <!-- Booking dialog -->
+    <string name="booking_title">Konfirmasi Sewa</string>
+    <string name="booking_confirm">Konfirmasi Sewa</string>
+    <string name="booking_breakdown">%1$s × %2$d hari%3$s</string>
+    <string name="booking_discount"> • Hemat 10%%</string>
+    <string name="booking_total_label">Total pembayaran</string>
+    <string name="booking_saved">Pesanan berhasil dibuat.</string>
+
+    <!-- Account / Akun -->
+    <string name="account_title">Akun Saya</string>
+    <string name="account_edit_name">Ubah Nama</string>
+    <string name="account_orders">Lihat Pesanan</string>
+    <string name="account_phone">No. HP</string>
+    <string name="account_username">Username</string>
+    <string name="account_name_label">Nama Lengkap</string>
+    <string name="account_name_saved">Nama berhasil diperbarui.</string>
+    <string name="account_name_empty">Nama tidak boleh kosong.</string>
+
+    <!-- Misc home actions -->
+    <string name="home_location_title">Pilih Lokasi</string>
+    <string name="home_location_saved">Lokasi: %1$s</string>
+    <string name="home_rent_mode_on">Mode lepas kunci aktif.</string>
+    <string name="home_rating_format">★ %1$s (%2$s)</string>
+    <string name="booking_driver_fee">Sopir +%1$s/hari</string>
+    <string name="booking_failed">Pesanan gagal disimpan. Silakan coba lagi.</string>
+    <string name="auth_forgot_required">Isi email, username, atau nomor HP di kolom login terlebih dahulu.</string>
+    <string name="auth_forgot_sent">Tautan atur ulang kata sandi dikirim ke %1$s.</string>
+
+    <string-array name="location_cities">
+        <item>Jakarta</item>
+        <item>Bandung</item>
+        <item>Surabaya</item>
+        <item>Yogyakarta</item>
+        <item>Medan</item>
+    </string-array>
+
+    <!-- Fleet data: everything comes from Realtime Database -->
+    <string name="vehicles_empty">Belum ada armada. Data akan muncul setelah admin mengunggahnya.</string>
+    <string name="vehicles_load_error">Gagal memuat daftar armada.</string>
+
+    <!-- Admin panel -->
+    <string name="admin_panel">Panel Admin</string>
+    <string name="admin_title">Kelola Armada</string>
+    <string name="admin_subtitle">Tambah, ubah, atau hapus data armada</string>
+    <string name="admin_add">Tambah Armada</string>
+    <string name="admin_empty">Belum ada armada. Tambahkan lewat tombol di atas atau Firebase Console.</string>
+    <string name="admin_edit">Ubah</string>
+    <string name="admin_delete">Hapus</string>
+    <string name="admin_delete_confirm">Hapus armada ini?</string>
+    <string name="admin_not_admin">Akun ini tidak memiliki akses admin.</string>
+    <string name="admin_form_new">Tambah Armada Baru</string>
+    <string name="admin_form_edit">Ubah Armada</string>
+    <string name="admin_field_brand">Merk (contoh: Toyota)</string>
+    <string name="admin_field_name">Nama lengkap armada</string>
+    <string name="admin_field_category">Kategori</string>
+    <string name="admin_field_seats">Jumlah kursi (contoh: 7 Kursi)</string>
+    <string name="admin_field_transmission">Transmisi (contoh: Matic)</string>
+    <string name="admin_field_feature">Fungsi unggulan (contoh: Sunroof)</string>
+    <string name="admin_field_price">Harga per hari (Rp)</string>
+    <string name="admin_field_rating">Rating (contoh: 4.9)</string>
+    <string name="admin_field_reviews">Jumlah ulasan (contoh: 128)</string>
+    <string name="admin_field_badge">Label singkat (contoh: Hybrid)</string>
+    <string name="admin_field_badge_type">Warna label</string>
+    <string name="admin_field_image_url">URL gambar atau hasil unggahan</string>
+    <string name="admin_field_active">Tampilkan di aplikasi</string>
+    <string name="admin_image_pick">Pilih Foto</string>
+    <string name="admin_image_hint">Tempel URL gambar atau pilih foto dari perangkat</string>
+    <string name="admin_name_required">Nama armada wajib diisi.</string>
+    <string name="admin_price_required">Harga per hari wajib diisi.</string>
+    <string name="admin_saved">Data armada tersimpan.</string>
+    <string name="admin_save_failed">Gagal menyimpan data armada.</string>
+    <string name="admin_deleted">Armada dihapus.</string>
+    <string name="admin_delete_failed">Gagal menghapus armada.</string>
+
+    <!-- Admin dashboard (Stitch: Admin Mobile - Ringkasan Dashboard). Semua angka diisi dari RTDB. -->
+    <string name="admin_portal">Admin Portal</string>
+    <string name="admin_brand">OTW.IN</string>
+    <string name="admin_welcome">Selamat Datang,</string>
+    <string name="admin_total_revenue">Total Pendapatan Keseluruhan</string>
+    <string name="admin_revenue_note">Akumulasi semua pesanan</string>
+    <string name="admin_system_ok">Semua sistem normal. %1$d booking siap diproses.</string>
+    <string name="admin_system_idle">Belum ada booking yang menunggu diproses.</string>
+    <string name="admin_add_unit">Tambah Unit</string>
+    <string name="admin_today_schedule">Jadwal Hari Ini</string>
+    <string name="admin_pickups">%1$d Penyerahan</string>
+    <string name="admin_idle_fleet">Armada Nonaktif</string>
+    <string name="admin_idle_units">%1$d Unit</string>
+    <string name="admin_fleet_total">Total Armada</string>
+    <string name="admin_unit_suffix">Unit</string>
+    <string name="admin_fleet_breakdown">%1$d Aktif • %2$d di Pool</string>
+    <string name="admin_needs_action">Perlu Tindakan</string>
+    <string name="admin_booking_suffix">Booking</string>
+    <string name="admin_verification_note">Menunggu verifikasi pesanan</string>
+    <string name="admin_revenue_month">Pendapatan %1$s</string>
+    <string name="admin_revenue_trend">%1$s vs bulan lalu</string>
+    <string name="admin_utilization">Utilisasi Armada</string>
+    <string name="admin_util_value">%1$d%%</string>
+    <string name="admin_util_low">Rendah</string>
+    <string name="admin_util_medium">Sedang</string>
+    <string name="admin_util_high">Tinggi</string>
+    <string name="admin_waiting_verification">Menunggu Verifikasi</string>
+    <string name="admin_urgent">%1$d Mendesak</string>
+    <string name="admin_see_all">Semua (%1$d)</string>
+    <string name="admin_verification_empty">Belum ada pesanan yang menunggu verifikasi.</string>
+    <string name="admin_doc_pending">Menunggu verifikasi dokumen</string>
+    <string name="admin_check">Periksa</string>
+    <string name="admin_mark_done">Tandai Selesai</string>
+    <string name="admin_order_detail">Detail Pesanan</string>
+    <string name="admin_order_marked_done">Pesanan ditandai selesai.</string>
+    <string name="admin_order_update_failed">Gagal memperbarui pesanan.</string>
+    <string name="admin_composition">Komposisi Armada</string>
+    <string name="admin_composition_sub">Kapasitas &amp; ketersediaan kategori</string>
+    <string name="admin_active_of">%1$d/%2$d Aktif</string>
+    <string name="admin_category_mpv">MPV</string>
+    <string name="admin_category_suv">SUV</string>
+    <string name="admin_category_city">City Car</string>
+    <string name="admin_category_ev">EV Listrik</string>
+    <string name="admin_category_sedan">Sedan</string>
+    <string name="admin_category_ratio">%1$d/%2$d</string>
+    <string name="admin_recent_activity">Aktivitas Terkini</string>
+    <string name="admin_auto_update">Auto-update</string>
+    <string name="admin_activity_empty">Belum ada aktivitas pesanan.</string>
+    <string name="admin_activity_order">Pesanan baru: %1$s</string>
+    <string name="admin_activity_done">Pesanan selesai: %1$s</string>
+    <string name="admin_tab_summary">Ringkasan</string>
+    <string name="admin_tab_fleet">Armada</string>
+    <string name="admin_tab_orders">Pesanan</string>
+    <string name="admin_tab_finance">Keuangan</string>
+    <string name="admin_orders_summary">Total pesanan: %1$d</string>
+    <string name="admin_orders_empty">Belum ada pesanan masuk.</string>
+    <string name="admin_finance_total">Total Pendapatan</string>
+    <string name="admin_finance_month">Pendapatan Bulan Ini</string>
+    <string name="admin_finance_orders">Pesanan Selesai</string>
+    <string name="admin_finance_average">Rata-rata per Pesanan</string>
+    <string name="admin_finance_cancelled">Pesanan Dibatalkan</string>
+    <string name="admin_time_now">baru saja</string>
+    <string name="admin_time_minutes">%1$d mnt lalu</string>
+    <string name="admin_time_hours">%1$d jam lalu</string>
+    <string name="admin_time_days">%1$d hari lalu</string>
+
+    <string-array name="vehicle_categories">
+        <item>MPV Keluarga</item>
+        <item>City Car</item>
+        <item>EV Listrik</item>
+        <item>SUV Tangguh</item>
+        <item>Sedan Mewah</item>
+    </string-array>
+    <string-array name="vehicle_category_values">
+        <item>mpv</item>
+        <item>city</item>
+        <item>ev</item>
+        <item>suv</item>
+        <item>sedan</item>
+    </string-array>
+    <string-array name="admin_badge_types">
+        <item>Biru</item>
+        <item>Hijau</item>
+    </string-array>
+    <string-array name="admin_badge_type_values">
+        <item>blue</item>
+        <item>green</item>
+    </string-array>
+</resources>
