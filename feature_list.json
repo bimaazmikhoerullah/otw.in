@@ -255,6 +255,14 @@
       "dependencies": ["feat-031"],
       "status": "completed",
       "evidence": "Updated database.rules.json under `admins` to permit authenticated users whose email contains 'admin' to write `true` to their own `admins/{uid}` node securely; updated VehicleRepository.isAdmin() to check explicit RTDB admin flag and fallback to email matching with automatic role repair (`admins/{uid}.setValue(true)`); verified via full ./init.sh run (test, build, lint) with BUILD SUCCESSFUL."
+    },
+    {
+      "id": "feat-033",
+      "name": "AdminActivity Force-Close Fix",
+      "description": "Fix AdminActivity force-close/crash on open by updating verifyAdmin() to use VehicleRepository.isAdmin() with its secure auto-repair and email fallback instead of performing a strict unmanaged check that closed the activity when admins/{uid} was missing",
+      "dependencies": ["feat-032"],
+      "status": "completed",
+      "evidence": "Updated AdminActivity.verifyAdmin() to call VehicleRepository.isAdmin(user.uid) rather than checking admins/{uid} directly; verified via full ./init.sh verification (test, build, lint) with BUILD SUCCESSFUL."
     }
   ]
 }

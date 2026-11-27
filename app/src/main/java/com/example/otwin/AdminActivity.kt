@@ -121,24 +121,16 @@ class AdminActivity : AppCompatActivity() {
             finish()
             return
         }
-        VehicleRepository.adminsReference().child(user.uid)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.getValue(Boolean::class.java) != true) {
-                        toast(R.string.admin_not_admin)
-                        finish()
-                        return
-                    }
-                    loadAdminName(user.uid)
-                    observeVehicles()
-                    observeOrders()
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    toast(R.string.vehicles_load_error)
-                    finish()
-                }
-            })
+        VehicleRepository.isAdmin(user.uid) { isAdmin ->
+            if (!isAdmin || isFinishing || isDestroyed) {
+                toast(R.string.admin_not_admin)
+                finish()
+                return@isAdmin
+            }
+            loadAdminName(user.uid)
+            observeVehicles()
+            observeOrders()
+        }
     }
 
     private fun loadAdminName(uid: String) {
