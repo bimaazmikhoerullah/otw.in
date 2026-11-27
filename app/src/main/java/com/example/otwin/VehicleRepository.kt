@@ -50,7 +50,10 @@ object VehicleRepository {
         val id = reference.key ?: vehicle.id
         reference.setValue(vehicle.copy(id = id).toMap())
             .addOnSuccessListener { onResult(true) }
-            .addOnFailureListener { onResult(false) }
+            .addOnFailureListener { e ->
+                android.util.Log.e("VehicleRepository", "Failed to save vehicle: ${e.message}", e)
+                onResult(false)
+            }
     }
 
     fun delete(vehicleId: String, onResult: (Boolean) -> Unit) {
@@ -60,7 +63,10 @@ object VehicleRepository {
         }
         reference().child(vehicleId).removeValue()
             .addOnSuccessListener { onResult(true) }
-            .addOnFailureListener { onResult(false) }
+            .addOnFailureListener { e ->
+                android.util.Log.e("VehicleRepository", "Failed to delete vehicle: ${e.message}", e)
+                onResult(false)
+            }
     }
 
     /**
